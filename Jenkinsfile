@@ -1,3 +1,4 @@
+// Just a comment
 checkout([
   $class: 'GitSCM',
   branches: [[name: '*/main']],
