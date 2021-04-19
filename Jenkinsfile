@@ -5,31 +5,64 @@ pipeline {
 
   stages {
 
-    stage("checkout") {
+    stage("build-api") {
 
       steps {
 
-        echo 'Checking out repo'
+        echo 'Preparing to build API'
+        sh 'docker build api Dockerfile'
 
-        checkout([
-          $class: 'GitSCM',
-          branches: [[name: '*/main']],
-          doGenerateSubmoduleConfigurations: false,
-          extensions: [],
-          submoduleCfg: [],
-          userRemoteConfigs: [[url: 'https://github.com/ian-llewellyn/ip-mon']]
-        ])
+      }
+
+    }
+/*
+    stage("build-ui") {
+
+      steps {
+
+        echo 'Preparing to build UI'
+        sh 'docker build ui ui/Dockerfile'
 
       }
 
     }
 
+    stage("test-api") {
+
+      steps {
+
+      }
+
+    }
+
+    stage("test-ui") {
+
+      steps {
+
+      }
+
+    }
+*/
+    stage("deploy-api") {
+
+      steps {
+
+        echo 'Preparing to deploy API'
+
+      }
+
+    }
+/*
+    stage("deploy-ui") {
+
+      steps {
+
+        echo 'Preparing to deploy UI'
+
+      }
+
+    }
+*/
   }
 
 }
-
-/* The below is somehow equivalent to the pipeline {} and agent any lines above
-node {
-  // groovy script
-}
-*/
