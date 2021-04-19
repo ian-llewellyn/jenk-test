@@ -17,7 +17,7 @@ pipeline {
           doGenerateSubmoduleConfigurations: false,
           extensions: [],
           submoduleCfg: [],
-          userRemoteConfigs: [[url: 'https://github.com/ian-llewellyn/docktor']]
+          userRemoteConfigs: [[url: 'https://github.com/ian-llewellyn/ip-mon']]
         ])
 
       }
